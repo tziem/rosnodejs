@@ -122,7 +122,7 @@ class ActionClientInterface extends EventEmitter {
       if (this.isServerConnected()) {
         return true;
       }
-      else if (timeoutMs > 0 && start + timeoutMs > Date.now()) {
+      else if (timeoutMs > 0 && start + timeoutMs < Date.now()) {
         return false;
       }
       else {
